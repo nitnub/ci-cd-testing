@@ -2,7 +2,7 @@ FROM node:18.12.1-alpine
 
 ENV NODE_ENV production
 
-# WORKDIR /app # It's recommended to not use the WORKDIR instruction in your Dockerfile -GitHub documentation
+WORKDIR /app
 
 COPY package.json /app
 
