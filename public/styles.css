@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 325px;
+  width: 325px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: aliceblue;
+  border-radius: 8px;
+}
+
+#total {
+  padding: 24px;
+  font-size: 1.5em;
+}
