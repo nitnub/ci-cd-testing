@@ -1,7 +1,7 @@
-import cdk = require("@aws-cdk/core");
-import ec2 = require("@aws-cdk/aws-ec2");
-import ecs = require("@aws-cdk/aws-ecs");
-import elbv2 = require("@aws-cdk/aws-elasticloadbalancingv2");
+import cdk from "@aws-cdk/core";
+import ec2 from "@aws-cdk/aws-ec2";
+import ecs from "@aws-cdk/aws-ecs";
+import elbv2 from "@aws-cdk/aws-elasticloadbalancingv2";
 
 /**
  * Enter DockerHub path here (example -> nitnub/ci-cd-testing)
