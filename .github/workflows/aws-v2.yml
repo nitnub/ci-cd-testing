@@ -23,7 +23,7 @@ jobs:
         id: deploy
         run: |
           aws deploy create-deployment \
-          --application-name ci-cd-instance-v2 \
+          --application-name server \
           --deployment-group-name CICD-node-test-app-cd1 \
           --deployment-config-name CodeDeployDefault.OneAtATime \
           --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
