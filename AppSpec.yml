@@ -1,11 +1,30 @@
-# From AWS
+# # From AWS
+
+# version: 0.0
+# Resources:
+#   - TargetService:
+#       Type: AWS::ECS::Service
+#       Properties:
+#         TaskDefinition: "arn:aws:ecs:us-east-1:111222333444:task-definition/my-task-definition-family-name:1"
+#         LoadBalancerInfo:
+#           ContainerName: "SampleApplicationName"
+#           ContainerPort: 80
 
 version: 0.0
-Resources:
-  - TargetService:
-      Type: AWS::ECS::Service
-      Properties:
-        TaskDefinition: "arn:aws:ecs:us-east-1:111222333444:task-definition/my-task-definition-family-name:1"
-        LoadBalancerInfo:
-          ContainerName: "SampleApplicationName"
-          ContainerPort: 80
+os: linux
+files:
+  - source: /index.html
+    destination: /var/www/html/
+hooks:
+  BeforeInstall:
+    # - location: scripts/install_dependencies
+    - location: npm install
+      timeout: 300
+      runas: root
+    - location: node server.js
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: node server.js
+      timeout: 300
+      runas: root
