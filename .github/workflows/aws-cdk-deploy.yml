@@ -1,6 +1,5 @@
 name: Deploy CDK
 #  BEWARE THIS LAUNCHES MACHINES ON AWS - expose on push to do so
-
 on:
   push:
     branches:
@@ -8,17 +7,14 @@ on:
   pull_request:
     branches:
       - master
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
           fetch-depth: 1
-
       - name: Deploy
         uses: udondan/cdk-nodejs@v0.3.1
         with:
