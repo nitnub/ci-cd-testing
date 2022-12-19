@@ -1,28 +1,9 @@
-# # From AWS
-
-# version: 0.0
-# Resources:
-#   - TargetService:
-#       Type: AWS::ECS::Service
-#       Properties:
-#         TaskDefinition: "arn:aws:ecs:us-east-1:111222333444:task-definition/my-task-definition-family-name:1"
-#         LoadBalancerInfo:
-#           ContainerName: "SampleApplicationName"
-#           ContainerPort: 80
-
 version: 0.0
 os: linux
 files:
   - source: /
     destination: /home/ec2-user/ci-cd-testing
 hooks:
-# ApplicationStop:
-# DownloadBundle:
-#  BeforeInstall:
-#    - location: scripts/before_install.sh
-#      timeout: 300
-#      runas: root
-# Install:
   AfterInstall:
     - location: scripts/after_install.sh
       timeout: 300
