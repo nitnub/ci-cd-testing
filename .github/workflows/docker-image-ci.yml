@@ -33,4 +33,3 @@ jobs:
         run: docker build -t nitnub/ci-cd-testing .
       - name: Push the tagged Docker image
         run: docker push nitnub/ci-cd-testing
-
