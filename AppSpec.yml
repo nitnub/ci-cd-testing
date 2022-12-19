@@ -14,7 +14,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/ci-cd-instance-v2
+    destination: /home/ec2-user/ci-cd-testing
 hooks:
   AfterInstall:
     - location: scripts/after_install.sh
