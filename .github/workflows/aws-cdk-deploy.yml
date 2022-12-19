@@ -1,12 +1,12 @@
 name: Deploy CDK
 #  BEWARE THIS LAUNCHES MACHINES ON AWS - expose on push to do so
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+# on:
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
 jobs:
   build:
     runs-on: ubuntu-latest
