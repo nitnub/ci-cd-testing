@@ -1,33 +1,7 @@
-# name: Deploy CDK
-# #  BEWARE THIS LAUNCHES MACHINES ON AWS - expose on push to do so
+name: AWS Deploy
 # on:
 #   push:
-#     branches:
-#       - main
-#   pull_request:
-#     branches:
-#       - main
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - run: npm cache clean -force
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-#         with:
-#           fetch-depth: 1
-#       - name: Deploy
-#         # uses: udondan/cdk-nodejs@v0.3.1
-#         uses: udondan/cdk-nodejs@v0.4.0
-#         with:
-#           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
-name: AWS Deploy
-# on: pull_request
-on:
-  push:
-    branches: [main]
+#     branches: [main]
 jobs:
   start-runner:
     name: Start self-hosted EC2 runner
@@ -49,7 +23,6 @@ jobs:
         with:
           mode: start
           github-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-          # ec2-image-id: ami-123
           ec2-image-id: ${{ secrets.AWS_EC2_IMAGE }}
           ec2-instance-type: ${{ secrets.AWS_INSTANCE_TYPE }}
           subnet-id: ${{ secrets.AWS_EC2_SUBNET }}
