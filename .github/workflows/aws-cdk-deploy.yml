@@ -51,7 +51,7 @@ jobs:
           github-token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           # ec2-image-id: ami-123
           ec2-image-id: ${{ secrets.AWS_EC2_IMAGE }}
-          ec2-instance-type: ${{ secrets.git add . }}
+          ec2-instance-type: ${{ secrets.AWS_INSTANCE_TYPE }}
           subnet-id: ${{ secrets.AWS_EC2_SUBNET }}
           security-group-id: ${{ secrets.AWS_SECURITY_GROUP }}
           # iam-role-name: my-role-name # optional, requires additional permissions
