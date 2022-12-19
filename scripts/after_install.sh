@@ -5,3 +5,5 @@ cd /home/ec2-user/ci-cd-instance-v2 >> /home/ec2-user/ci-cd-instance-v2/deploy.l
 
 echo 'npm install' >> /home/ec2-user/ci-cd-instance-v2/deploy.log 
 npm install >> /home/ec2-user/ci-cd-instance-v2/deploy.log
+
+
