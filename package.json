@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "bin": {
+    "awsec3_docker_express": "bin/awsec3_express_docker.js"
+},
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
