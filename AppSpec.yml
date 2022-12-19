@@ -13,18 +13,14 @@
 version: 0.0
 os: linux
 files:
-  - source: /index.html
-    destination: /var/www/html/
+  - source: /
+    destination: /home/ec2-user/ci-cd-instance-v2
 hooks:
-  BeforeInstall:
-    # - location: scripts/install_dependencies
-    - location: npm install
+  AfterInstall:
+    - location: scripts/after_install.sh
       timeout: 300
       runas: root
-    - location: node server.js
-      timeout: 300
-      runas: root
-  ApplicationStop:
-    - location: node server.js
+  ApplicationStart:
+    - location: scripts/application_start.sh
       timeout: 300
       runas: root
