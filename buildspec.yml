@@ -1,5 +1,60 @@
+# # version: 0.2
+# # phases:
+# # artifacts:
+# #   files:
+# #     - appspec.yml
+
+# version: 0.2
+# phases:
+#   install:
+#     runtime-versions:
+#       python: 3.8
+#   pre_build:
+#     commands:
+#       - pip install -r requirements.txt
+#       - python app_test.py
+
+# 
+# V2:
 version: 0.2
+
 phases:
+  install:
+    runtime-versions:
+      nodejs: 18  
+    # commands:
+    #   - echo Installing Mocha...
+    #   - npm install -g mocha
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install
+      # - npm install unit.js
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+      # - mocha test.js
+  post_build:
+    commands:
+      - echo Build completed on `date`
+# Include only the files required for your application to run.
+# Do not use recursively include artifacts from node_modules directory as it will include unnecessary packages 
+# used only for building and testing.
+# ExpressJS apps will need other artifact directories included (bin/*, public/*, routes/*, views/* etc).
 artifacts:
   files:
+    - app.js
     - appspec.yml
+    - server.js
+    - public/*
+    - scripts/*
+    - public/*
+    - testing/*
+    # - node_modules/async/*
+    # - node_modules/lodash/*
+    # - app.js
+    # - index.html
+    # - package.json
+    # - node_modules/async/*
+    # - node_modules/lodash/*
