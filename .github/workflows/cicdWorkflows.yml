@@ -19,9 +19,12 @@ jobs:
         run: npm start &
       - run: npm test
   build:
+  
     name: Build Docker image
     needs: test
     runs-on: ubuntu-latest
+  
+
     steps:
       - uses: actions/checkout@v1 # may be actions/checkout@v2 now
       - name: Login to DockerHub Registry
